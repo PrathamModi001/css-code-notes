@@ -1,0 +1,102 @@
+----> Width and Height Property
+
+-> It is used to change the dimension of the content area of the box. It will not change the padding or the borders.
+-> If we apply background color to the box it will only be shown in the content area.
+DEV TOOl -> we can inspect certain area and on the left side we can see the pixels its takingup.
+
++++++++++++++++++++++++++++++++
+
+----> Border properties
+Pixels unit is generally used for border width because its going to be small.
+
+-> If we apply border-width, since border-color is not present it wont show, now since border-style is not specified nothing will be shown if all three are not present (not in any particular order).
+
+-> /*width|style|Color*/
+border:medium dashed green;
+a shortcut: one liner code to specify all three instad of border width border style border color 3 liner code.
+
+-> we also have border-left-color: property as well. So in short we can have border-right-____ style,color,width,height...and so on. We can kind of updfate the property after writing the first line of code then changing the left right or whatever the fuck you wanna change in the nect line.
+
+-> border-style: dashed groove none dotted
+dashed-> top line, groove-> right side, none-> bottom, dotted-> left side
+
+--->Border Radius:
+-> we generaslly use the 10% or percentages instead of pixels more often. It is actually 10% of the width.
+NOTE: We can also do border-top-left-radius to round a certain corner only.
+      We an set radius: 50% to make a circle. The content will not be inside but there are ways you can do that which we will learn later on.
+Check out MDN border radius for more beautiful shapes.
++++++++++++++++++++++++++++++++++
+
+---->Padding
+
+Individual                     Shorthand
+Property                       Properties
+
+PADDING-LEFT                   SET ALL FOUR
+PADDING-RIGHT                  SIDES AT
+PADDING-BOTTOM                 ONCE!
+PADDING-TOP
+
+Apply to all four sides
+     padding:10px;
+
+ vertical|horizontal
+   padding:5px 10px;
+
+top|horizontal|bottom
+ padding:1px 2px 2px;
+
+top|right|bottom|left
+padding:5px 1px02px;
+
+-> It is mostly used to make space and allow the text to breathe.
++++++++++++++++++++++++++++++++++
+
+---->Margin
+
+Margin is the space outside of the the border. It is used when we want to seperate different elements from one another wherteas padding is used when we want to seperate the text with the border(inside the boundary, margin is outside the boundary)
+
+-> H1s and other headings automatically get margins. 
+-> Body element also has some automatic margin. GOOD PRACTICE: Remove it when making a website and make space whenever  required. It removes the mystery white space.
+-> margin:auto; will make it equal margin.
++++++++++++++++++++++++++++++++++
+
+----> Display Property
+
+we know that the block element takes up the entire workspace available to it whereas the inline element will take the amount of space it requires ONLY.
+
+But we can change this behaviour by using display: inline; inside the block element css.
+Similarly we can put diplay: block; inside the inline element css.
+
+--> For an inline element: HEIGHT AND WIDTH are NOT respected. Padding and margin are respected but only for one line only not if we do 100px and the margin will be done for 100px space, NO it will be there knly for one line(since it is an inline element)
+that brngs us to another kind of element present:
+
+--> Inline-Block element: an element that acts as an inline element but width height padding margin are respected
+
+We can also hide an element by doing display:none;
++++++++++++++++++++++++++++++++++
+
+----====> UNITS
+
+1.Percentage:
+-> It uses the certain percentage of the parent element. line-height: uses the percentage tp the size of the fonts.
+
+2. Em
+
+-> It is also a relative element. 1em is the size of the parent element. 2em so, is twice the size of the parent.
+So if we are writing a paragraph inside article sementic (like footer/nav), if we write h2 2em p 1.5em. But now if we change the font size of the article by article{font-size:40psx;} now both the h2 and paragraphwill change its font since it is relative.
+
+-> But with other properties (box model prop), the relative size is not the parent element size but the font-size of the element itself.
+
+-> Problem of ems is that when nesting like ul li ul li ul li the first ul will take up the for eg: 1.5em. then this increased font size will act as the parent for the next li and so it will now get 1.5 times the ul and so there will be an increase in the size as the nesting goes on (or decrease if the parent font size was kept 0.75em) 
+
+3. Rems
+
+-> If we dont want relativeness with the parent elements, rather we want some constant relative, REMS: Root HTML element
+is the font size under observation. It is always constant. It is specified in the line 2 of all html docs <html lang="en">
+we still can change it but can base everything of the ratio of off this constant. change by: html{font-size:20px;} 
+
+
+
+
+

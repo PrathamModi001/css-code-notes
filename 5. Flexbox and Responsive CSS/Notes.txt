@@ -1,0 +1,164 @@
+REMEMBER: The concept is more important than actually remembering the syntax as you can always look that up.
+        -> Default Main axis: Left to right
+           Default Cross Axis: Top to bottom  
+
+        --> Justify Content along Main Axis and Align items along the Cross Axis
+
+1. Flex Direction:
+    It determines/sets direction of the MAIN AXIS.
+
+    By default: flex-direction:row;
+    The direction of the MAIN AXIS is left to right.
+
+    ->:row-reverse;
+    The MAIN AXIS is right side to left side.
+
+    ->:column;
+    The MAIN AXIS is top to bottom. But if the size of this container(section) is less than the size of the divs, they will readjust in order to fit. now they will not be the predefined size as we hardcoded them to be(they will be sqeezed) 
+
+    ->:column-reverse;
+    bottom to top.
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+2.Justify Content;
+    It determines how the browser distributes space between and around content items along MAIN AXIS
+
+    justify-content: flex-start;
+
+    ->:flex-start;
+    Alligns our content along the START of the MAIN AXIS. if main axis is in left to right direction(flex-direction:row), the flex start alligns our content along the left to right.
+
+    ->:flex-end;
+    Alligns our content along the END of the MAIN AXIS.
+
+    ->:centre;
+    Along the CENTRE of the MAIN AXIS.
+
+    ->:space-between;
+    Will take all the extra space and distribute it BETWEEN the elements but not on the outside edges(element and the container)
+
+    ->:space-around;
+    Evenly distribute within the allignment of the container.
+    if you consider the space between one element and the container as x, then the space between 2 element will here be 2x (x for right of one element and x for the left of the other element)
+
+    ->:space-evenly;
+    Here, very similar to space-around, only difference being, the space between the element and the container will be 2x instead of x.
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+3. Flex-wrap
+
+    -->Condition when it will even apply: the size of the element is more than the size of the container
+    In normal condition(nowrap) the elements will shrink/gets squashed to evenly fit the size.
+
+    But when wrap is done: new ordered stacks (of size not shrinked) will be created with even distribution BETWEEN them.
+                            (like spac between).
+
+                           But now this stacks arrangement will be decided by the justify content value. for eg: if justify content is space-around, then the content will have equal space for each box (x and 2x waala saara), now the spacing direction (vertical mein spacing ya horizontal mein spacing with container) will be decided by flex-direction.
+    
+    -->wrap-reverse:
+       Our CROSS AXIS direction gets reversed (default left to right but in reverse ulta direction) 
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+4. Align Items
+
+    Distribute items (not determine space) along the CROSS AXIS.
+    
+    align-items:flex-start;
+
+    same property:
+    ->:flex-start;
+    ->:flex-end;
+
+    ->:baseline;
+    aligns items along the base of letters (if you write letters inside those box )  Check the screenshot for a clearer view.
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+5. Align-content
+
+    Distribute SPACE along cross axis whose direction is set by align items. Like flex-wrap it has meaning only in multi line boxes.
+ALIGN CONTENT WILL ONLY WORK WHEN FLEX WRAP IS USED with values wrap or wrap reverse.
+
+    --> align-content:space-between;
+
+    ->:space-between;
+    creates equal space BETWEEN the contents
+
+    ->:flex-start;
+    moves the items towards the start of the cross axis.
+
+    ->:start;
+    moves items to the start of the container.
+
+    ->:end;
+    moves items to the end of the container.
+
+    and all the other properties of justify content.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+6. Align-Self
+
+    Simialr to align content but this property is applied for individual items in the flex container.
+
+    we have to target that specific element and then do align-self
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+7. Flex-basis:
+
+    -> Sets the width/size of the element along the main axis.
+    -> It can be considered as the minimum (not really) size that the element will have, then it will grow (if flex-grow present)
+    -> It is the initial size the element should be added into our container can be height or width depending on the main axis.
+    -> If the flex basis size is larger and wont fit in the conatiner and flex-wrap is not used then no changes will occur.
+
+8. Flex-grow:
+
+    -> It is going to control the amount of space that an element takes if there is available space.
+    -> Takes up all the additional space that is available to the element.
+    
+    -> So if we do flex-grow for the first and the last element in the container they will grow to take all the remaining space and so the first and the last will become equal in size (larger than others), But only this property will apply IF THERE IS EXTRA SPACING AVAILABLE.
+
+    -> if we do flex grow for all elements then all the elements in the container will become larger than the hard coded value and equally divide the space between all the elements.
+
+    -> takes the unitless value of 1 or whatever number, but the remaining empty space will be divided in that ratio like 1st is 1 and the 5th element is 2 then the ratio will be 1 and 2 in the division of empty space.
+
+    -> So if we shrink the size of our screen (laptop -> mobile) then all this will make the elements responsive as the remaining space will be equally divided between all elements.
+
+    -> if flex-wrap is on then the elements will stack and thus again creating extra space in the 2nd stack and thus one of the element taking up large space.
+
+    -> flex-grow can be accompanied with max-width if you dont want the element to be larger than a certain value, or min-width.
+
+    -> So this is a direct replacement of width if we want to create responsive sites.
+
+9. Flex-shrink:
+
+    -> It governs the amount of space when there is not enough space.
+    -> It also takes unitless values like 1 2 3, if 1 2 used then the one with 2 will shrink faster and thus shrink more in comparison. So it is shrinking relatiove to other elements.
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+10. Shorthand FLEX property:
+
+    /* One value, unitless number: flex-grow
+    flex-basis is then equal to 0. */
+    flex: 2;
+
+    /* Two values: flex-grow | flex-basis */
+    flex: 1 30px;
+
+    /* Two values: flex-grow | flex-shrink */
+    flex: 2 2;
+
+    /* Three values: flex-grow | flex-shrink | flex-basis */
+    flex: 2 2 10%;
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+11. RESPONSIVE WEBSITES: 
+
+    ----> Media Queries:
+        They allow us to modify our styles depending on particular parameters like screen width or device type.
+
+        -> @media(parameter_insert) and (parameter_2){
+                property_define_when_parameter_match{
+
+                }
+        }
+
+        mostly the parameter used will be min-width or max-width, width is never used as it targets exact one pixel.

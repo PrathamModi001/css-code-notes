@@ -1,0 +1,490 @@
+ALWAYS REFER TO THE DOCS THERE IS NO POINT AND YOU DONT HAVE TO MEMORIZE ANY OF THIS, JUST KNOW WHAT ALL YOU CAN DO WITH BOOTSTRAP.
+
+
+1. To access Bootstrap:
+    Copy the css links to the head as usual, also include the js scripts right before the end of the body tag.
+
+2. Containers: 
+    class="container" usually a div.
+
+    -> REQUIRED for using default bootstrap grid systems.
+    -> Will container the content.
+    -> Center the content (sometimes only)
+
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ----> Fluid Containers
+    class="fluid-container" usually a div.
+
+    -> ONLY difference is that the content (lines of text for eg) will take the entire screen and not a centered container.
+        There will be a container, minimal padding margin and all will be there but the content will take up (almost) the entire screen.
+    
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ----> Responsive Containers:
+    
+    -> sm: will take up the entire screen for SMALL screen. (100% width)
+    -> md: will take up the entire screen for MEDUIUM screens.
+    -> lg:
+    -> xl:
+    -> xxl:
+
+    after the breakpoint is achieved(say for small screen its 960px) after that point, it will act as default container for the larger screens than that of the breakpoint.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+3. Buttons:
+
+    1.<button type="button" class="btn btn-danger">Danger</button>
+    2.<button type="button" class="btn btn-outline-success">Success</button>
+
+    -> Add the button line from the docs in the html file.
+    -> You can also use an anchor link to look like a button but work like a normal anchor tag(links).
+    -> we can also alter their sizes by adding btn-lg or btn-sm to get small or large buttons at the end of the normal classed buttons.
+    <button type="button" class="btn btn-danger btn-lg">Danger</button>
+
+    ---> Can also have custom styling according to our requirements:
+
+    <button type="button" class="btn btn-primary"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+    Custom button
+    </button>
+
+    -> We can also make the buttons block level elements (take up the entire line)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+4. Typography:
+
+    ----> Display (Heading Size)
+    It only suggests the SIZE of the fonts for the heading. (remember display-1 heading can have display-4 below it theres no system that you have to use h1 and then h2 only)
+
+    <h1 class="display-1">Display 1</h1>
+
+    display-1 being the largest in size.
+
+    +++++++++++++++++++++++++++++++++++++
+    ----> Lead (Paragraph size)
+    Makes the paragraph stand out. 
+    (does nothing much, only font weight and font size increase).
+
+    <p class="lead"></p>
+    +++++++++++++++++++++++++++++++++++++
+
+    ----> Blockquote:
+    <blockquote></blockquote> does exactly what it says, used for quoting someone or stating quotes of famous personalities
+
+    <blockquote class="blockquote">
+    <p class="mb-0">A well-known quote, contained in a blockquote element.</p>
+    </blockquote>
+
+    what does this mb-0 mean in the paragraph? If we are naming a source there shouldnt be any margin between the two elements and we obvio dont want that since the quote and the source are closely associated and thus 
+    margin-bottom=0 -> mb-0
+
+    again does nothing other than font size larger font weight larger.
+    +++++++++++++++++++++++++++++++++++++
+
+    ----> Naming a source:
+
+    since we just saw the blockquote, if it has a source of a person who said the quote will come under this: 
+
+    <blockquote class="blockquote"> <p> YO BITCH </p></blockquote>
+    <footer class="blockquote-footer">Jesse (from Breaking Bad)</footer>
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+5. Allignment:
+
+    As simple as text-align=center but using bootstrap we can do text-right inside classes in html file itself, why are we doing these petty things ? to make the code writing faster and make our lives easier. thats the goal of bootstrap.
+
+    <blockquote class="blockquote" text-right>
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+5. Badges:
+
+    Like the ones in reddit that say new or some kind of tag that is realted to the post.
+
+    class="badge". But we also need to tell the color and exactly what the element is and extra info the class might look like:
+
+    <button type="button" class="btn btn-primary">
+    remember badges can also be of some other things like span or whatever.
+
+    We can also nest these badges in order to give it a count kinda effect like Notification4 suggesting 4 new notification.
+
+    <button type="button" class="btn btn-primary">
+    Notifications <span class="badge text-bg-secondary">4</span>
+    </button>
+
+    ---> badge badge-pill:
+        If we want rounded corners or buttons with border-radius:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+6. Button Groups:
+
+    -> We can group buttons which will remove the inside curvature part of buttons and make margin 0.
+
+    make a div of class="btn-group"{
+        and have buttons you want to group here.
+    }
+
+    -> we can also use this to make fancy radiobutton. we might need to add role="group" inside div classes
+
+    -> we can nest them to make dropdown lists with a few button grouped together.
+
+    -> we can also resize them by doing: btn-lg or btn-sm.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+7. Alerts:
+
+    Bring attention to the user.
+    -> We can have other elements inside this alert also.
+
+    -> Alert Paragraph/content.
+
+    class="alert alert-success" alert-success is the color variant of the alert.
+
+    -> We should also have a alert heading.
+
+    class="alert-heading" 
+
+    --> We should have dismissable alerts by pressing x by doing: 
+
+    -> A full dismissing alert with headings:
+
+    -----------------------------------------------------------------
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">Oh No!</h4>
+            Danger! You are about to end the world as we know it!
+            <button aria-label="Close" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+
+here the class alert suggests alert is being used from bootstrap alert danger suggests color choosing.
+
+alert-dismiss fade show makes a cool fading effect when it dismises.
+role alert is a used in screen readability and its very important to make our website actually be visible on google.
+
+class alert heading says a heading is being used.
+
+        <button aria-label="Close" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+this entire thing is used to make a X sign (not the letter x but an actual multiply sign) and make it in the top right corner just copy paste this nothing to lear here.
+
+remember we added js scripts right above where body ended? if we dont include that then the alert wont go away !
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+8. Grid System:
+
+    --> Extremely useful in making the sidebars or whatevers to go away when inside a smaller screen, this can be done using 
+
+    1. We must make a div/whatever with a class container. (or fluid container)
+
+    2. We need to create a row with the clas of a row. Columns with class column. class="row" and class="col"
+        ---> Need to understand that each row has 12 units, so if we have 3 elements inside the row, each will take 4 units, we can change which element takes what length but know that a row has 12 units.
+
+        So if we want 2 columns (2 divisions 50% 50%) we will do div.row with div.col-6 inside.
+        -> Also if we want eqaully sized columns we can simpy write div.col and no numbers behind which by default does equal spacing.
+            If we only give size to one of the elements then the other elements will figure out to eqaully divide the space that is left. (so this was a mixture of auto size and specific sized).
+
+    ----> Responsive Grid:
+
+    Extra small          Small          Medium          Large               Extra large
+    <576px               ≥576px         ≥768px          ≥992px              ≥1200px
+                                                        
+
+    ---> So to make the rows and columns and the container responsive what we'll do is row-md-6,
+        
+        row-md-6: how to read this:
+        when the screen size is above medium size(768px) then the row will take 6 units, when smaller: then it will STACK i.e. it will take the 100% width and all the elements inside the container will stack up.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+9. Forms:
+
+    --> Make a <form></form> and inside it add a div.form-group
+    This will help in making appropriate margins and all.
+
+    and as per usual forms: create a label, then input but inside inputs add a class="form-control", which is the predefined class from bootstrap.
+
+    <form action="#nowhere">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Email">
+    </div>
+
+    By default this form will take tthe entirety of the conatiner.
+
+    ---> We can also create bootstrap dropdown selection (select and options from html) by simply adding form-control inside select:
+
+    <div class="form-group">
+        <label for="state">State</label>
+        <select name="state" id="state" class="form-control">
+            <option value="AL">Alabama</option>
+            <option value="Ak">Alaska</option>
+        </select>
+    </div>
+
+    we can do form-control-lg or -sm for size changes 
+
+    ----> Custom Inputs:
+        Check docs for custom :
+        -> Radiobuttons
+           <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="tos">
+                    <label class="custom-control-label" for="tos">Sign Me Up</label>
+                </div>
+            </div> 
+
+        -> Checkboxes
+        -> Selects
+        -> Switches
+        -> Range
+
+    ----> Grid System
+
+        As learnt if we want certain elements to share the space we can have a div.row with multiple div.col which need to be shared with numbered units (sum of all units 12)
+
+        --> But this has more gutter space (margin or gaps btw them), so we tend to use more of form-row instead of row
+
+        Same concept of col-md-6: for medium screensizes and above: take 6 units, and for all below ones take the entire 100% width and get stacked.  
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+10. Navbar:
+
+    --> Need to use docs always, no shame.
+
+    -> the main nav(instead of a div) will contain the class navbar
+        inside this nav we can have div or span or whatever with class navbar-brand
+
+    -> Color change of text by navbar-light dark or whatever and change the background color by doing: bg-primary or success or whatever.
+
+    -> to add images inside the navbar we can do is include an anchor tag (with class navbar-brand) woth image inside it
+
+    -> We can have different elements in the navbar as anchor tags.
+        These may include active (which is supposed to show which page off the navbar you are currently on) and disabled (idk why this is present)
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-to  ggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled">Disabled</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    ---> A navbar should have
+        1. A class navbar-nav
+        2. Inside it several anchor tags with class nav-link
+        3. The first div must be wrapped (uske upar) with a class of collapse navbar-collapse.
+        4. But by doing this, all the eleements just disappear as collapse is what has caused this. It is used when we want some items to be hidden until we do some specific action (will learn more about it when we learn js)         
+
+        5. So now whhat we need to do is wrap everything inside navbar navbar-expand-{size} to say when we want the navbar to expand and when to have a hamburger.
+            navbar navbar-expand-lg : for large and above will be expanded and for lower a js hamburger needs to be created.
+        
+        6. So to create that hamburger (or toggler) a child of navbar-brand: button.navbar-toggler which will in turn have a child of        span.navbar-toggler-icon 
+
+        But now this button needs too be connected to all the links in order to actually show the anchor tags when clicked on the hamburger.
+
+        7. We can do this by adding classes to the navbar-toggler: data-bs-toggle="collapse" and data-bs-target="#navbarNavAltMarkup". Since we need to connect this to the div containing the anchor tag, make an id="#navbarNavAltMarkup".
+
+        So Everything inside the div with this id will be shown in the hamburger.
+        You need to havve js scripts for this to work.
+
+        ---> what we can do is wrap a container inside the first nav so our nnav bar is still 100%width but the contents have a little margin.
+
+            other thing that can be done is have a container wrap outside the navbar so that the navbarr is only in the center kinda and also have the inside container in order to have a little margin.
+        
+        ---> fixed-top in the main nav class, to have the nav bar completely fixed at the top when we scroll. But this will hide any content that is at the top.
+
+        ---> instead we can have a sticky top which will solve this problem by when the scrolling encounters the navbar it will stick and go to the top.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+11. Icons:
+    
+    -> We can add certain icons from bootstrap by simply copy pasting the svg links into the html file where we want to add also.
+
+    ---> Another utility is that we can use input group (learnt before) and use these icons here.
+        -> input-group-prepend will put thee icon first and then the input form.
+        -> input-group-append will put the icon at last of the input form.
+
+        div.input-group inside this: div.input-group-prepend icon (inside span better but if not ok) input input input input (input group isliye to hai to have multiple inputs)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+12. Utilities:
+
+    1. Border:
+       -> can do class border-2 , border-right-5 , border-top-3 , and so on...
+       -> Change color by doing: border border-primary
+       -> Can modify the border radius as well by doing: class rounded(all) rounded-top,bottom,left,circle,pill,sm,lg (smaller or larger rounding of corners). If we dont want some side borders we can do is border-top-0.
+
+     2.Color and Background Color 
+
+        class="text-primary" (the primary is the semantic word for blue in bootstrap, text-danger is red)
+        changes the color of the text.
+
+        class="bg-warning" (warnig is yellow)
+        changes the background color.
+
+        .bg-warning.bg-gradient
+        can have nice looking gradients.                                               
+
+    3. Shadow:
+
+        -->Defualt Shadow:
+        class="shadow"
+        can also have shadow-sm ,lg,xl,xxl and so on...
+
+        --> Regular Shadow
+        <div class="shadow p-3 mb-5 bg-body rounded">Regular shadow</div>
+                        
+        --> Larger Shadow
+        <div class="shadow-lg p-3 mb-5 bg-body rounded">Larger shadow</div>                                                                                                                                     
+    
+    4. Spacing: Margin(m) and Padding(p):
+        
+        {property}{sides}-{size} and {property}{sides}-{breakpoint}-{size} for sm, md, lg, xl, and xxl.
+
+        Property: m for margin
+                  p for padding
+
+        Sides: t for top 
+               b for bottom
+               x along x axis (both left and right)
+               y along y axis (both top and bottom)
+
+        Size: 0
+              1
+              2    
+              3
+              4
+              5
+
+        ----> Remember use margin betwen 2 different elements like 2 divs or 2 sections. Padding will come btw 2 buttons.
+    
+    5. Display:
+
+        As such, the classes are named using the format:
+
+        .d-{value} for xs
+        .d-{breakpoint}-{value} for sm, md, lg, xl, and xxl.
+        
+        Where value is one of:
+
+        none
+        inline
+        inline-block
+        block
+        grid
+        table
+        table-cell
+        table-row
+        flex
+        inline-flex
+
+        --> Hiding Elements: d-none d-lg-block
+            This line reads: 
+                    Display none (hide) and not hide when large screen and when at large screen show as block element.
+    
+    6. Flex: To be applied on rows (for grid system)
+             and apply text-center on col for the inside content to be centered.   
+
+    --> Justify Content:
+            <div class="d-flex justify-content-between">...</div>
+
+            Variations For Justify Content:
+                    .justify-content-start
+                    .justify-content-end
+                    .justify-content-center
+                    .justify-content-between
+                    .justify-content-around
+                    .justify-content-evenly
+
+                For screensize selector: justify-content-sm-between md lg xl xxl
+    
+    --> Align Content:
+            <div class="d-flex align-items-baseline">...</div>
+
+            Variations For Align Content:
+                    .align-items-start
+                    .align-items-end
+                    .align-items-center
+                    .align-items-baseline
+                    .align-items-stretch
+
+                For screensize selector: align-items-sm-between md lg xl xxl
+
+    --> Align Self:
+            <div class="align-self-baseline">Aligned flex item</div>  
+
+            Variations For Align Self: Same as align content.
+    
+
+    7. Size: Width (w) and Height (h):
+    
+        -> <div class="w-25 p-3" style="background-color: #eee;">Width 25%</div>
+
+            w-25 50 75 100 auto
+
+        -> Same for height h-25
+    
+    8. Cards:
+
+        <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        </div> 
+
+        ---> Contains a main div.card and provide a width (for the entire container).
+
+        -> Can provide additional height and width for the image but have to do inside class and then w-25 h-75, if you want specific height and width like 18rems, then do style="height:18rem; width:18rem;" The inline method of adding 
+        styles in an html file.
+
+        ---> Contains a card body div
+            That will inturn contain:
+            --> card-title
+                This can include a subtitle.
+                That will in turn contain:
+                --> Card Text:
+                    This can contain some buttons or whatever element you want here.
+
+
+        ----> Remember if you want an only text card then you can remove the image part.
+
+    9. Carousel:
+
+        These are the sliders that you can add which work on js principles but you just have to copy from the docs because its going to be a LOT.
+    
+    10. Drop Down Menus:
+
+        Can attach to buttons or whatever. Again copy from docs.
+
+    11. Spinners:
+
+        These are the loading screen spinners.
+    
+    12. Modals:
+        Popup Menus/screens. Again uses js.
+    
+    13. **Order:
+        --> If we want to re arrange stuff then we do order-1 for the first thing and order-2 for the second thing.
+        --> BUT according to responsiveness, we want 2nd item to come fist then the 1st item ON MOBILE: then we do
+            order-1 order-md-2 and order-2 order-md-1:
+            
+            order-1 order-md-2 : you are order 1 except once medium and above you are 2nd, (medium and above ke liye 2nd baaki 1st) 
+            order-2 order-md-1 : you are order 2 except once medium and above you are 1st. (medium and above ke liye 1st baaki 2nd)

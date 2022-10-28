@@ -1,0 +1,38 @@
+h1{
+    background-color: #80ffdb;
+    width: 110px;
+    border-width: 3px;
+    border-color: #3f37c9;
+    border-style: solid;
+    border-radius: 10%;
+}
+
+#one{
+    background-color: #1e6091;
+    color:azure;
+    width: 200px;
+    height: 200px;
+    border-width: 4px;
+    border-color: #660708;
+    border-style: solid;
+}
+#two{
+    background-color: #34a0a4;
+    color: aliceblue;
+    width: 200px;
+    height: 200px;
+    border-width: 3px;
+    border-color: #fee440;
+    border-style: inset;
+    border-left-width: 7px;
+}
+#three{
+    background-color: #52b69a;
+    color: azure;
+    width: 200px;
+    height: 200px;
+    /* border-width: 4px;
+    border-color: #c20114;
+    border-style: dashed; */
+    border: 4px dotted teal
+}

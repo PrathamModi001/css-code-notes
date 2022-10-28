@@ -1,0 +1,59 @@
+1. The link Element goes inside our <head> </head> element always.
+Syntax: (link tab) (href ke andar address of the external css file.)
+
+2. Color Attribute is responsible for changing the color of the texts only. Not the background color or anything else.
+Most visible example will be button color will change the color of the text in the button not the background color of the button.
+
+================================= Text Properties =======================================================
+3. When we write h2 {
+    color : teal;
+}
+-> It changes the color of ALL the H2s TEXTS not a particular one.
+
+4. Background-color will, ofc change the color of the background.
+-> Since the h1s and the h2s are the block elements they take up the entire space that is available to them.
+
+5. System we use for referencing the different colors:
+Can hover over the color box to change the color on the spot. vlick on hex or rgb to change the system.
+--> Named Colors: blue green red teal cyan rebbecapurple ... 144 named colors present
+
+--> RGB (red,green,blue) numbers. rgb(28,255,112)  [255 max value]
+
+--> Hexadecimal : Includes(1,2,3,4,5,6,7,8,9,A,B,C,D,E,F) highest being F (15). Includes 6 characters
+#    ff    ff      00   
+    red   green   blue
+ can use shortners like: #cc55ee -> #c5e, #000000-> #000. Can use them when 2 are same values.
+
+ 6. text-align: It will align the text wrt the total space of that entity. For example block element will become centre allign wrt to the whole block.
+ --> If we do width: 50% (overall width decrease to 50%) so ab it will become centre align wrt the remaining 50% of the block.
+
+ 7. font-weight: Thickness of the text. Indicated by different methods: 
+ --> Key Values
+font-weight: normal , bold , lighter , bolder
+
+--> Numeric Values: 400 -> Normal, 700 -> Bold
+
+8. text-decoration: underline, underline dotted , underline dotted red , green wavy underline , underline overline #FF3028 ... and so on.
+
+====> Most useful Cases: 
+
+-> When there are anchor tags present there comes an automatic underline. Thatlooks ugly so we should remove that underline by a{
+    text-decoration: none
+} which will remove the underline but still keep the blue color of the hyperlinks so that it is still differentiated from the normal texts.
+
+-> Other usecase is while making a todo list, we use the text-decoration: line-through to strike through the tasks that have been done.
+
+9. line-height: Controls the space BETWEEN the texts, sepeartion btw 2 lines of texts, vertical spacing: 
+Nomenclatre: 
+line-height: normal , 2.5 , 150% , 32px , 3em (a unit,discussed later) 
+
+10. letter-spacing: Exactly simmilar to font-height but controls the spacing between the letters, horizontal spacing.
+(does not have the ONLY numeric value as its value eg: 10 not available but 10px done!)
+
+11. font-size: size of the fonts
+--> font-size: 80px
+
+12. Font Family: will change the font of the text: 
+-> We can only use the fonts supported by our machines. For example if some font is not present in the machine then it falls back to the next font.
+we can also specify a font family instead of some specific font from the fasmily and the machine will automatically choose one of the fonts from the family.
+For eg: monospace is the family and monaco is the dont inside this family.

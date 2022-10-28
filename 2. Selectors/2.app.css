@@ -1,0 +1,82 @@
+body{
+    background-color: #c1d3fe;
+}
+
+/* At this instant we are selecting all the buttons but w=if we want a aparticular button stylised, we will id select them */
+button{
+    background-color: #06d6a0;
+}
+#signup{
+    background-color: #1b4332;
+    color: #b8f2e6;
+}
+
+h1,h2{
+    font-size: 30px;
+    color: #03045e;
+}
+
+.title{
+    font-size: 60px;
+}
+.tag{
+    background-color:#cfbaf0;
+    font-size: 17px;
+    color: #be0aff
+}
+
+.posted_by a{
+    color: #2a9d8f;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.posted_by{
+    color: #ff6000;
+}
+
+footer a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #8447ff;
+}
+input + button{
+    color: red;
+    background-color: #ffc2d1;
+}
+footer > a{
+    color: #0466c8;
+    background-color: #80ffdb;
+    font-style: oblique;
+}
+/* a[href="www.google.com"]{
+    color:brown;
+} */
+a[href*="google"]{
+    color: brown;
+}
+/* both mean the same thing */
+.post button:hover{
+    color: whitesmoke;
+    background: red;
+}
+.post button:active{
+    background-color: #7400b8;
+}
+
+.posted_by a:hover{
+    text-decoration: underline;
+}
+.post:nth-of-type(2n){
+    background-color: #b2c3eb;
+}
+.post h2::first-letter{
+    font-size: 48px;
+    color:#7209b7;
+}
+.post p::first-line{
+    color: #be0aff;
+}
+.post p::selection{
+    background-color: #ffba08;
+}

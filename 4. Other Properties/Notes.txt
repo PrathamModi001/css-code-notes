@@ -1,0 +1,120 @@
+NOTE: WHEN ADDING MULTIPLE IMAGES, NEVER WRITE THE IMG TAG IN DIFFERENT LINES:
+      always write like <img src=""><img
+			     src=""><img
+			     src="">
+      So this also gives you a sense of adding multiple images( by having src in different lines. THE MAIN MOTTO IS TO HAVE IMG TAGS NOT HAVING A NEWLINE OR A SPACE BETWEEN THEM. otherwise a space character is introduced which fucks up our spacing calculations.
+
+1. Aplha: RGBA
+
+-> it is the same rgb but a:Aplha refeers to the transparency, ranging from 0-1. 0 being transparent 1 being opaque.
+-> But the catch is that it ONLY applies to the background-color.
+-> For hex codes we can add 2 more digits, values ranging from 00 to ff ff being opaque.
+
+2. Opacity
+
+-> It also manages the transparencyof the elements but this affects ALL the elements, decendent or the parent element.
+   if we have a button or text it will also start to fade when transparency increases. but this is NOT the case with rgba.
+++++++++++++++++++++++++++++++++++++++++
+
+3. Position
+
+-> It changes the position of the entity wrt where it should be present
+
+--> position:static;
+   no change in position whatsoever
+
+--> position:relative;
+    top:50px means it will be offset from the top wrt to the original position
+
+--> position:absolute; (pura upar se gya bc)
+    here, the element is removed fro the work flow, no space made avaialable for that entity.
+    It is positioned to its closest positioned ancestor (meaning it should not be positioned static) if none present then it will postio itself in accordasnce with its own initial position.
+
+--> position:fixed;
+    it positions the certain element and it stays FIXED there. for eg: the nav bar sometimes stays fixed even if we scroll the site. it will stay there on that entire page.
+
+--> position:sticky;
+    it is ditto same like fixed position but: that element will start to stay fix as it comes down. for eg: certain ads are fix on the page but as we scroll down that box comes down with our scroll.
+++++++++++++++++++++++++++++++++++++++++
+
+4. Transitions
+
+PROPERTY NAME|DURATION|TIMING FUNCTION|DELAY
+
+-> if we write: transition:3s; we are saying take 3sec to make changes for EVERYTHING which we sometimes dont want so w specify the four prop or however many prop you like.
+
+-> the property you specify will be the change that will accompany with transitions. other changes will be spontaneous
+
+-> delay is the time delay that will occur between the transition will even start to take place.
+
+NOTE: The changes means magenta->cyan AND cyan->magenta BOTH.
+
+-> 2 prop: transition:background-color 1s,border-radius 2s;
+
+-> Timing function is which specifies the way the element reaches/undergoes the 3s transition. SHOULD check out mdn reference to check loads and loads of variety of timings that can occur. also check out www.easings.net
++++++++++++++++++++++++++++++++++++++++
+
+5. Transformations
+
+--> rotate()
+    roatates the element by some degrees. Units: angles (45deg) ,radian (3.14rad) or turns (1.5turn);
+    EG: h1{
+        transform:rotate(45deg); 
+    } 
+
+    -> by default, the axis of rotation will be in the middle, but we can change that by:
+    transform-origin: top-left; and so on...
+
+--> rotate3d() rotateX() rotateY() rotateZ()
+    does what the name suggests. X: roatates about x-axis, Y: rotates about y-axis......
+
+--> scale()
+    shrinks or grows. 0.5 means it will become half the size equally about x and y. 2 will make it twice the big.
+    scale(2,1) means x mein double(width) but y mein size same. it also has similar scaleX() scaleY() scaleZ() but we can do scale(1,2) or scaleY(2) both mean same thing. 
+
+--> translate()
+    translation motion. translate(200px) will make the element go 200px in +ve X direction. translateX() translateY() translateZ(). can take -ve values as well to make it for eg: go in -ve X axis.
+    translate(100px,-200px) X mein 100px Y mein -200px.
+
+--> skew()
+    skewing is also possible. X Y Z mein sabmein. 
+
+--> Adding multiple Properties in a single line:
+    transform: rotate(-20deg) scale(1.3) translate(-500px) ....and so on.
+
+--> Matrix and Perspective not coveredm, learn it yourself only when needed.
++++++++++++++++++++++++++++++++++++++++++
+
+6. Background And its tags:
+
+--> background-image: url("url");
+    Allows to add a background image mostly from the web itself, but you can locally host it too.
+    But most likely this image is not going to be full.
+
+--> background-size: contain;
+    scales the image as large as possible without cropping, if some space left it starts REPEATING the image from the left, unless the backgroung-repeat property is set as off.
+
+    -->: cover;
+    scales as large as possible, but will crop it.You'll use this more often becuase mostly you dont want the images to be repeating.
+
+--> background-position: top;
+    top part of the image will be used and the remaining that isnt coming inside the dimension will be cropped.
+
+NOTE: we can write the single line code in any order but only one order is to be kept in mind: this should be the 
+FORMAT: background-size/background-postion; since order doesnt matter but these two should be paired together with a slash but this entire can be placed anywhere (since no order).
+
+-> We can also have multiple background if we position it like 40% or 50% no repeat then in the remaining place we can put another image in the same line.
+++++++++++++++++++++++++++++++++++++++++++
+
+7. Google fonts:
+
+--> There are 992 free fonts avaialable on the google fonts website.
+--> If you like a certain font click on it, choose 2-3 fonts and add them. then on link, copy all contents and paste it inside the head part.
+    Then copy the css part and paste it inside the css file inside {} wherever you want it.
+
+--> Now since you have chosen 2-3 fonts of different weight, if you choose font-weight:400; (which you have selected (it will show what weight you have selected)) it will show 400 of that font.
+    But if you choose font-weight:1000; which you dont even have (the closest you added was 800) then the closest weight to it will be chosen (here 800).
+
+-> Google fonts also shows which font is generally paired with which one, like headings roboto then google pairing suggests sans-seriff as the body part. then do the same process of copy paste in header html file and in css file.
+
+    

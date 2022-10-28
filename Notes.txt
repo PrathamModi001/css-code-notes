@@ -1,0 +1,14 @@
+1. To make a box come in centre:
+    display: flex;
+    flex-direction:column;
+    justify-content:centre;
+    align-items:centre;
+    height:100vh;
+    text-align: center;
+
+    -> and another box inside this box where the content will come:
+    max-width:960px;
+
+2. To take an image and make it and entire screen big with no repeat:
+    background: url(hehe/haha) no-repeat;
+    background-size:cover;

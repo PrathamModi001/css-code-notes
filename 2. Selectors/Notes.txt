@@ -1,0 +1,195 @@
+========================= ** Selectors ** =====================================
+
+----> Universal Selector
+
+1. *{}
+-> Selects everything and styles everything. Not much useful.
+
+----> Element Selector: 
++++++++++++++++++++++++++++++++++++++++++
+
+2. h1{
+
+}
+-> Selects all h1 to stylize them.
++++++++++++++++++++++++++++++++++++++++++
+
+-----> Selector List:
+3. h1,h2{
+
+}
+-> Selects h1 and h2 (h1+h2 selected) by a seperation of comma.
++++++++++++++++++++++++++++++++++++++++++
+
+----> ID Selector
+
+4.#id{
+
+} 
+-?We know ids from html forms, but they have more use now.
+-> If we want to single out and element and style just that element, we can do that by using its ids.
+-> As learned in html, that only and only one elemenent can have a single id, it always has to be UNIQUE, otherwise there will be many conflicts
+
+--> But at the same time it should be noted that we should not use this only method to stylise everything, there are better startegies to go about doing the same thing.
++++++++++++++++++++++++++++++++++++++++++
+
+----> Class Selector
+
+5. .class{
+    
+} 
+->The most used and the better method instead of id Selector.
+->Use class="" as a sticker and paste it everywhere you want to style some particular things.
+-> If we have div with class tag and section with class tag and some other thigs with class tag, but only want to select section tag then what we do is: 
+section.tag{}
++++++++++++++++++++++++++++++++++++++++++
+
+----> Descendant Selector
+
+6. li a{
+
+}
+which says all the anchor tags inside lists, will be targeted for styling
+
+-> ismein triple layering not possible like paragraph ke andar #id ke andar anchor tags. 
++++++++++++++++++++++++++++++++++++++++++
+
+----> Adjacent Selector
+
+7. input + button{
+
+}
+which says all the buttons IMMEDIATELY AFTER the input tag will be targetted for styling
++++++++++++++++++++++++++++++++++++++++++
+
+----> Direct Child
+
+8. footer > a{
+
+} 
+which says all the anchor tags 1 layer below footer will be targetted
+the anchor tag should be the child of the footer.
++++++++++++++++++++++++++++++++++++++++++
+
+----> Attribute Selector
+
+9. input["password"]{
+
+}
+all the inputs with attribute/type password will be targetted
+-> instead of the input["password"] we can have anything like a[href="https://lel.org"]
+
+--> More types: 
+1. a[href*="example"] so aas paas 'example' word aayega inside href. It is a more fuzzier matching in comaparison
+a[href*="google"]{
+    color: brown;
+}
+AND
+a[href="www.google.com"]{
+    color:brown;
+}
+mean the same thing
+
+2. a[href$=".org"] meaning hrefs ending in .org to wo select ho jaega
+++++++++++++++++++++++++++++++++++++++++
+
+----> PSEUDO CLASSES
+
+keyword added to a selector that specifies a special state of the selected element(s)
+for eg: :active, :hover
+
+.post button:hover{
+
+}
+read as: post class mein jitne bhi button hai unko jab 'hover' karenge tab behaviour change to: 
+
+Learn more about the different states: 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+
+.post nth-of-type(3n) : 
+every 3rd or 3nth of class post will be selected for styling.
+if we write only 3 instead of 3n then only the 3rd element will be stylised.
++++++++++++++++++++++++++++++++++++++++++
+
+----> PSUEDO ELEMENTS
+
+lets you stylise the element after being selected. the only difference btw the 2 is that psuedo classes is a special state whereas psuedo elements are the parts of the selecting.
+
+.post h2::first-letter{
+
+}
+stylise the first letter of the h2 inside post
+
+.post p::selection{
+
+}
+stylise what happens when we select the text with cursor.
++++++++++++++++++++++++++++++++++++++++++
+
+----> Cascade
+
+h1{
+    color: red; 
+}
+THEN 
+h1{
+    color: brown;
+}
+so the color of all h1s will be brown and not red. Imagine like it got updated.
+--> This Logic can be extended to multiple style sheets (css files) being linked. Jo baadmein linked hoga will overwrite the properties of first css file if they conflict.
+++++++++++++++++++++++++++++++++++++++++
+
+----> Specificity
+
+--> More the specific the selector is, it will win over the other one and overwrite it.
+--> Also the o\one which comes later in the order will automatically win if same specificity.
+General Formula: ID > Class > Element
+Id are extremely specific, class are somewhat specific whereas elements are very generic
+
+
+0                   0                      2
+ID Selectors        Class,attribute        Element and
+                    and psuedo class       Psuedo-element Selectors 
+                    selectors                      
+
+There are score calculators present online as well.
+-> Remember that these things will be applied only when there is conflict within two styles.
+
+-> Inline styling always win (styling in the html file itself), but is absolutely nolt recommended.
+
+---> !important:
+It is kind of like a sticker that tells browser that hey make this win automatically and overwrite all the styles that have been used earlier. Not recommended to use. Use only when we want to meddle with other persons file, using it as a template in our own thing and dont understand wtf he has done.
+
+THESE 2 pointswill staright up just ignore the specificity and so not much useful.
+
+When you arent sure why something isnt applying, then check its specificity and compare it with what is being shown opr whatever. Dev Tools can help a lot with this process.
++++++++++++++++++++++++++++++++++++++++
+
+DEV TOOLS HELP
+
+-->You can inspect a certain element and see its properties. It also shows which of the conflicting properties have won the specificity battle. we can also make changes there just to check how it would look but it will NOT change the css file.
+
+--> It also shows the default values of the browser and the properties it has taken automatically.
+
+--> If we want to check some hover prop or something, we can toggle hover and choose which element to force to hover by choosing some cursor ontop left of the dev tool and then choosing the element to force hover.
++++++++++++++++++++++++++++++++++++++++
+
+---->Inheritance
+
+body{
+    color: teal;
+}
+
+so now all the sections and the paragraph tags inside the body will become teal, but why? because they have inherited the property from their CLOSEST parent.
+
+section{
+    color: brown;
+}
+now the closest parent is section so the paragraph will take up the color brown.
+
+We can also see this inherited from property in the dev tools.
+
+But some elements will not inherit every properties from their parent. But there is a way do make them. we can do: 
+buttons, input{
+    color: inherit;
+}
